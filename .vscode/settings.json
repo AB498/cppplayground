@@ -1,0 +1,6 @@
+{
+  "files.associations": {
+    "*.fneh": "plaintext",
+    "iosfwd": "cpp"
+  }
+}
