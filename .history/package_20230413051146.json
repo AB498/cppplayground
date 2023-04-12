@@ -7,7 +7,7 @@
   "engines": {
     "vscode": "^1.77.0"
   },
-  "icon": "imgs/icon.png",
+  "icon": "https://github.com/AB498/ab498.github.io/blob/b1d768b93066d63dcd1bb6ecc95289f8b4846d72/pngegg.png",
   "categories": [
     "Other"
   ],
