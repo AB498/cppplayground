@@ -1,0 +1,29 @@
+.vscode/**
+.vscode-test/**
+test/**
+.gitignore
+.yarnrc
+vsc-extension-quickstart.md
+**/jsconfig.json
+**/*.map
+**/.eslintrc.json
+node_modules/**
+node_modules/
+src/**
+src/
+.history/
+.history/**
+archive/
+archive/**
+._cpp_tmp/
+._cpp_tmp/**
+assets/astyle.exe
+assets/state.json
+
+
+#   "files": [
+#     "out/**",
+#     "imgs/**",
+#     "wasm/**",
+#     "!node_modules"
+#   ],

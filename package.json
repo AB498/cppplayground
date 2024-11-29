@@ -1,0 +1,228 @@
+{
+  "name": "cppplayground",
+  "displayName": "C++ Playground: Inline REPL, Compile, Run, Lint, Format, Cloud, Visualize, Intellisense, Error Lens, Debug, Essentials",
+  "publisher": "498",
+  "description": "Lightweight CPP/C++ Runner Featuring Linter, Formatter, Line By Line Outputs On Keyboard Input, Cloud Compile, Realtime Code Execution Visualization, Error Checking, Intellisense, etc - All In One...",
+  "version": "1.0.41",
+  "engines": {
+    "vscode": "^1.0.0"
+  },
+  "icon": "imgs/icon.png",
+  "keywords": [
+    "c++",
+    "compiler",
+    "run",
+    "format",
+    "lint",
+    "visualizer",
+    "intellisense",
+    "cpp",
+    "competitive programming",
+    "prettier",
+    "extension",
+    "repl",
+    "runner",
+    "c",
+    "linter",
+    "formatter",
+    "visualization",
+    "cp",
+    "lens",
+    "helper",
+    "reactive",
+    "completions",
+    "snippets",
+    "debugger",
+    "inline",
+    "realtime",
+    "visualize",
+    "cloud",
+    "gcc"
+  ],
+  "tags": [
+    "c++",
+    "compiler",
+    "run",
+    "format",
+    "visualizer",
+    "intellisense",
+    "lint",
+    "cpp",
+    "competitive programming",
+    "prettier",
+    "extension",
+    "repl",
+    "runner",
+    "c",
+    "linter",
+    "formatter",
+    "visualization",
+    "cp",
+    "lens",
+    "helper",
+    "reactive",
+    "completions",
+    "snippets",
+    "debugger",
+    "inline",
+    "realtime",
+    "visualize",
+    "cloud",
+    "gcc"
+  ],
+  "categories": [
+    "Programming Languages",
+    "Visualization",
+    "Linters",
+    "Formatters",
+    "Debuggers",
+    "Snippets",
+    "Data Science",
+    "Education",
+    "AI",
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished",
+    "onLanguage:cpp",
+    "onFileSystem:file",
+    "workspaceContains:**/*.cpp"
+  ],
+  "main": "out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "cpp",
+        "extensions": [
+          ".cpp",
+          ".h",
+          ".hpp",
+          ".cc",
+          ".cxx"
+        ],
+        "aliases": [
+          "C++",
+          "cpp"
+        ]
+      }
+    ],
+    "formatters": [
+      {
+        "language": "cpp",
+        "selector": "source.cpp",
+        "id": "cppplayground-formatter",
+        "title": "C++ Formatter",
+        "default": true
+      }
+    ],
+    "configuration": [
+      {
+        "type": "object",
+        "title": "Online Mode",
+        "properties": {
+          "cppplayground.onlineMode": {
+            "type": "boolean",
+            "default": false,
+            "description": "Tick to use cloud compiler instead of local compiler"
+          }
+        }
+      },
+      {
+        "type": "object",
+        "title": "Auto Open Output Panel",
+        "properties": {
+          "cppplayground.enableAutoOpenOutput": {
+            "type": "boolean",
+            "default": true,
+            "description": "Automatically open output panel every time a C++ file is run"
+          }
+        }
+      },
+      {
+        "type": "object",
+        "title": "Delay Run After Typing (Debounce) (milliseconds)",
+        "properties": {
+          "cppplayground.delayRunAfterTyping": {
+            "type": "number",
+            "default": 500,
+            "description": "(Set 0 if you want immediate run on every keystore) Recommended value: 500 (for average speed typing) Too many cloud compile requests in under 1 second might get you rate limited. And too many on-device compilation light slow down ur pc."
+          }
+        }
+      }
+    ],
+    "commands": [
+      {
+        "command": "cppplayground.enable",
+        "title": "C++ Playground: Start C++ Playground On All Files"
+      },
+      {
+        "command": "cppplayground.disable",
+        "title": "C++ Playground: Stop C++ Playground On All Files"
+      },
+      {
+        "command": "cppplayground.toggleOnline",
+        "title": "C++ Playground: Toggle Online Mode"
+      },
+      {
+        "command": "cppplayground.insertCode",
+        "title": "C++ Playground: Insert Input Hardcode Template"
+      },
+      {
+        "command": "cppplayground.format",
+        "title": "C++ Playground: Format File"
+      },
+      {
+        "command": "cppplayground.visualize",
+        "title": "C++ Playground: Visualize Code Execution"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "cppplayground.enable",
+        "key": "ctrl+alt+shift+n",
+        "mac": "shift+cmd+shift+n"
+      },
+      {
+        "command": "cppplayground.disable",
+        "key": "ctrl+alt+shift+q",
+        "mac": "shift+cmd+shift+q"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js",
+    "vscode:prepublish": "npm run build",
+    "esbuild-base": "esbuild ./src/extension.js --bundle --outfile=out/extension.js --external:vscode --format=cjs --platform=node",
+    "test-compile": "tsc -p ./",
+    "build": "node esbuild.config.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.0.0",
+    "@vscode/test-electron": "^2.3.0",
+    "esbuild": "^0.19.5",
+    "esbuild-plugin-copy": "^2.1.1",
+    "esbuild-visualizer": "^0.6.0",
+    "eslint": "^8.36.0",
+    "glob": "^8.1.0",
+    "javascript-obfuscator": "^4.1.1",
+    "mocha": "^10.2.0",
+    "typescript": "^4.9.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AB498/cppplayground.git"
+  },
+  "homepage": "https://github.com/AB498/cppplayground/blob/main/README.md",
+  "dependencies": {
+    "axios": "^1.6.2",
+    "tmp": "^0.2.1",
+    "uuid": "^9.0.1",
+    "wastyle": "^0.0.5",
+    "web-tree-sitter": "^0.20.8"
+  }
+}
